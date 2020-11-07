@@ -39,7 +39,15 @@ public class RestaurantMap {
 			}
 		}
 	}
-	
+    
+    public void addVertex(int row, Vertex v)
+	{
+		matrix.get(row).add(v);
+	}
+	public Vertex getVertex(int row, int col)
+	{
+		return matrix.get(row).get(col);
+	}
 	
 	public RestaurantMap()
 	{

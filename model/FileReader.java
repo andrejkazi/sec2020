@@ -57,7 +57,8 @@ public class MyFileReader {
 			 String[] tokens = line.split(" ");
 			 for (int col = 0; col < 8; col++)
 			 {
-				 Vertex v = new Vertex(tokens[col]);
+                 Vertex v = new Vertex(tokens[col]);
+                 rMap.addVertex(row, v);
 			 }
 		 }
 		 return rMap;
