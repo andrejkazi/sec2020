@@ -38,9 +38,14 @@ public class RestaurantMap {
 				break;
 			}
 		}
+		@Override
+		public String toString()
+		{
+			return ID + "," + weight;
+		}
 	}
-    
-    public void addVertex(int row, Vertex v)
+
+	public void addVertex(int row, Vertex v)
 	{
 		matrix.get(row).add(v);
 	}
@@ -51,6 +56,25 @@ public class RestaurantMap {
 	
 	public RestaurantMap()
 	{
-		
+		matrix = new ArrayList<ArrayList<Vertex>>();
+		for(int row = 0; row < 8; row++)
+		{
+			matrix.add(new ArrayList<Vertex>());
+		}
+	}
+	
+	@Override
+	public String toString()
+	{
+		String ret = "";
+		for (int row = 0; row < 8; row++)
+		 {
+			 for (int col = 0; col < 8; col++)
+			 {
+				 ret += getVertex(row, col).toString() + " ";
+			 }
+			 ret += "\n";
+		 }
+		return ret;
 	}
 }
